@@ -32,3 +32,11 @@ def test_controller_service_repository_integration():
     assert controller.get_user_full_name(2) == "Alan Turing"
     assert controller.get_user_full_name(3) == "Grace Hopper"
     assert controller.get_user_full_name(999) == "404 NOT_FOUND"
+
+"""
+Si cambias el formato de salida del controlador, ¿qué otras capas tendrías que adaptar?
+
+Si el formato de salida del controlador cambia, solo tendrías que adaptar el controlador. El servicio y el repositorio no dependen del formato de salida, 
+ya que su responsabilidad es manejar la lógica de negocio y el acceso a los datos respectivamente. El controlador es el encargado de formatear la respuesta para el cliente, 
+por lo que cualquier cambio en el formato de salida solo afectaría a esa capa.
+"""
