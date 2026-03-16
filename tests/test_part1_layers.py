@@ -2,9 +2,9 @@
 # Importa las implementaciones concretas usadas en esta prueba.
 # Son parte del paquete "layers" que demuestra una separación clásica
 # en repositorio-servicio-controlador (separation of concerns).
-from src.layers.repository import InMemoryUserRepository
-from src.layers.service import UserService
-from src.layers.controller import UserController
+from layers.repository import InMemoryUserRepository
+from layers.service import UserService
+from layers.controller import UserController
 
 
 def test_controller_service_repository_integration():
@@ -30,4 +30,5 @@ def test_controller_service_repository_integration():
     # Act + Assert: verificar la salida correcta para ids de usuario conocidos y desconocidos.
     assert controller.get_user_full_name(1) == "Ada Lovelace"
     assert controller.get_user_full_name(2) == "Alan Turing"
+    assert controller.get_user_full_name(3) == "Grace Hopper"
     assert controller.get_user_full_name(999) == "404 NOT_FOUND"
